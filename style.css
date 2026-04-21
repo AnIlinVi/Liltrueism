@@ -307,7 +307,7 @@ h4 {
     margin-bottom: 20px;
 }
 
-.cart-container {
+.cart-container, cart-items {
     padding: 40px 0;
     width: 50%;
     margin: 0 auto;
