@@ -313,7 +313,7 @@ h4 {
     margin: 0 auto;
 }
 
-.cart-item,
+.cart-item, cart-items,
 .order-card {
     background: rgba(25, 25, 50, 0.8);
     border-radius: 20px;
