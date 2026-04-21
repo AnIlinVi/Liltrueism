@@ -1,5 +1,6 @@
 body {
     background-image: url(Fon.png);
+    
 }
 
 .navigation {
@@ -312,12 +313,8 @@ h4 {
     width: 50%;
     margin: 0 auto;
 }
-#cart-items {
-    padding: 40px 0;
-    width: 50%;
-    margin: 0 auto;
-}
-.cart-item, 
+
+.cart-item,
 .order-card {
     background: rgba(25, 25, 50, 0.8);
     border-radius: 20px;
