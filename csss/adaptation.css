@@ -1,0 +1,139 @@
+/* ========== АДАПТИВ КИБЕРПАНК ========== */
+@media screen and (max-width: 1024px) {
+    .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
+        width: 92%;
+    }
+    .ppp {
+        font-size: 0.85rem;
+    }
+    video {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imgTitle {
+        flex-direction: column;
+        text-align: center;
+    }
+    .butos {
+        justify-content: center;
+    }
+    .logoAbout {
+        flex-direction: column;
+    }
+    .kkk {
+        width: 160px;
+    }
+    .box, .theme-group {
+        gap: 1rem;
+    }
+    .beat {
+        width: 180px;
+    }
+    #pic1 {
+        width: 110px;
+        height: 110px;
+    }
+    .box1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .teamInfo {
+        width: 100%;
+    }
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    form {
+        width: 95%;
+    }
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cart-item-quantity, .cart-item-price, .cart-item-remove {
+        margin-top: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .beat {
+        width: 100%;
+        max-width: 260px;
+    }
+    .box, .theme-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .box1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .aboutH2::after {
+        width: 50px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    .litrueism {
+        font-size: 1.3rem;
+    }
+    button {
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
+    }
+    .orders-header-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
+        width: 96%;
+        margin: 1rem auto;
+    }
+    .butNav {
+        gap: 0.5rem;
+    }
+    .filter-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.7rem;
+    }
+    .theme-title {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .ppp {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+    .beat {
+        padding: 0.8rem;
+    }
+    #pic1 {
+        width: 90px;
+        height: 90px;
+    }
+    form {
+        padding: 1rem;
+    }
+    .cart-container {
+        padding: 1rem;
+    }
+    .up-button {
+        width: 40px;
+        height: 40px;
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+/* Для column-layout (активируется скриптом на главной при малых экранах) */
+.theme-group.column-layout {
+    flex-direction: column !important;
+    align-items: center;
+}

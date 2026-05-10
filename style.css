@@ -1,0 +1,593 @@
+/* ========== GOOGLE FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Source+Code Pro:wght@300;400;500;600;700&display=swap');
+
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at 20% 30%, #0a0a0f, #030308);
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #d0d0ff;
+    position: relative;
+}
+
+/* Сетка как в киберпанке (фон) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Orbitron', 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    color: #0ff;
+}
+
+h2 {
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #0ff, #f0f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #f0f;
+    text-shadow: 0 0 3px #f0f;
+}
+
+/* ========== НАВИГАЦИЯ ========== */
+.navigation {
+    background: rgba(5, 5, 15, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid #0ff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.05);
+    width: 88%;
+    margin: 1.5rem auto;
+    border-radius: 20px;
+    padding: 0.6rem 1.8rem;
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.navigation:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.imgTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.litrueism {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #0ff, #f0f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.butos {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: transparent;
+    border: 1px solid #0ff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: #0ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+}
+
+button:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 15px #0ff;
+    border-color: #0ff;
+}
+
+button.active {
+    background: #f0f;
+    border-color: #f0f;
+    color: #000;
+    box-shadow: 0 0 15px #f0f;
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ========== ОСНОВНЫЕ БЛОКИ ========== */
+.aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
+    width: 88%;
+    margin: 1.8rem auto;
+    background: rgba(8, 8, 18, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 28px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.aboutUs:hover, .videoBiography:hover, .items:hover {
+    border-color: #f0f;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+}
+
+.aboutH2 {
+    text-align: center;
+    padding: 1.5rem 1rem 0.5rem;
+    position: relative;
+}
+
+.aboutH2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #0ff, #f0f, #0ff);
+    margin: 0.6rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #0ff;
+}
+
+.logoAbout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    flex-wrap: wrap;
+}
+
+.ppp {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 20px;
+    color: #b8b8ff;
+    border-left: 4px solid #0ff;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.kkk {
+    width: 200px;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 10px #0ff);
+    border: 1px solid #0ff;
+}
+
+/* ========== ВИДЕО ========== */
+video {
+    width: 400px;
+    border-radius: 20px;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+/* ========== ФИЛЬТРЫ ========== */
+.butNav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #f0f;
+    color: #f0f;
+}
+
+.filter-btn:hover {
+    background: #f0f;
+    color: #000;
+    box-shadow: 0 0 12px #f0f;
+}
+
+/* ========== ТОВАРЫ ========== */
+.theme-title {
+    padding: 1rem 1.5rem 0;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.box, .theme-group {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.beat {
+    background: rgba(10, 10, 20, 0.8);
+    border-radius: 24px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    width: 220px;
+}
+
+.beat:hover {
+    transform: translateY(-8px);
+    border-color: #f0f;
+    box-shadow: 0 0 28px rgba(255, 0, 255, 0.3);
+}
+
+#pic1 {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #0ff;
+    box-shadow: 0 0 8px #0ff;
+    margin-bottom: 0.8rem;
+}
+
+.beat p {
+    color: #0ff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+audio {
+    width: 100%;
+    margin: 0.5rem 0;
+    filter: drop-shadow(0 0 2px #0ff);
+    background: #111;
+    border-radius: 30px;
+}
+
+.beat button {
+    background: transparent;
+    border-color: #0ff;
+    color: #0ff;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.beat button:hover {
+    background: #0ff;
+    color: #000;
+}
+
+/* ========== ФОРМА ========== */
+.back {
+    text-align: center;
+}
+
+form {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 28px;
+    width: 80%;
+    margin: 0 auto 2rem;
+    border: 1px solid #0ff;
+}
+
+.formInp {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    background: #111;
+    border: 1px solid #0ff;
+    border-radius: 60px;
+    color: #0ff;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.formInp::placeholder {
+    color: #5f5faf;
+}
+
+.formInp:focus {
+    outline: none;
+    border-color: #f0f;
+    box-shadow: 0 0 8px #f0f;
+}
+
+.btn {
+    background: linear-gradient(90deg, #0ff, #f0f);
+    color: #000;
+    border: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #f0f, #0ff);
+    box-shadow: 0 0 20px #0ff;
+    transform: translateY(-2px);
+}
+
+/* ========== КОМАНДА ========== */
+.box1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.teamInfo {
+    background: rgba(10, 10, 20, 0.8);
+    border-radius: 24px;
+    padding: 1rem;
+    text-align: center;
+    width: 150px;
+    border: 1px solid #f0f;
+    transition: 0.2s;
+}
+
+.teamInfo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #f0f;
+}
+
+.teamInfo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0ff;
+}
+
+.teamInfo p {
+    color: #b8b8ff;
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+}
+
+/* ========== ФУТЕР / КОНТАКТЫ ========== */
+.contact {
+    padding-bottom: 0.5rem;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.socialNetwork {
+    text-align: center;
+    flex: 1;
+}
+
+.socialNetwork h4 {
+    color: #f0f;
+    text-shadow: 0 0 4px #f0f;
+}
+
+.socialNetwork p {
+    color: #0ff;
+}
+
+.sN {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.sN img {
+    filter: drop-shadow(0 0 4px #0ff);
+    transition: 0.2s;
+}
+
+.sN img:hover {
+    filter: drop-shadow(0 0 12px #f0f);
+    transform: scale(1.1);
+}
+
+/* ========== КНОПКА ВВЕРХ ========== */
+.up-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #111;
+    border: 2px solid #0ff;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    z-index: 99;
+}
+
+.up-button:hover {
+    border-color: #f0f;
+    box-shadow: 0 0 15px #f0f;
+    transform: scale(1.05);
+}
+
+.up-button p {
+    color: #0ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ========== КОРЗИНА И ЗАКАЗЫ (неоновая тема) ========== */
+.cart-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item, .order-card {
+    background: rgba(8, 8, 18, 0.8);
+    border-radius: 24px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #0ff;
+    backdrop-filter: blur(4px);
+}
+
+.cart-item-info {
+    color: #0ff;
+    font-weight: 500;
+}
+
+.cart-item-quantity input {
+    width: 70px;
+    padding: 0.4rem;
+    border-radius: 40px;
+    background: #111;
+    border: 1px solid #0ff;
+    color: #0ff;
+    text-align: center;
+}
+
+.cart-item-remove {
+    background: transparent;
+    border: 1px solid #f55;
+    color: #f55;
+}
+
+.cart-item-remove:hover {
+    background: #f55;
+    color: #000;
+}
+
+.cart-total {
+    border: 1px solid #f0f;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 60px;
+    text-align: right;
+    font-size: 1.3rem;
+    color: #f0f;
+    margin-top: 1rem;
+}
+
+.btn-checkout {
+    background: linear-gradient(90deg, #0ff, #0a0);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-checkout:hover {
+    box-shadow: 0 0 20px #0f0;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(0,0,0,0.6);
+    border-radius: 32px;
+    border: 1px solid #0ff;
+}
+
+.empty-message a {
+    color: #f0f;
+    text-decoration: underline;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    color: #f0f;
+    border-bottom: 1px solid #0ff;
+    padding-bottom: 0.5rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    color: #0ff;
+}
+
+.order-total {
+    text-align: right;
+    font-weight: bold;
+    color: #f0f;
+    border-top: 1px solid #0ff;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.orders-header-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.back-shop-link {
+    border: 1px solid #0ff;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    color: #0ff;
+}
+
+.clear-orders-btn {
+    border-color: #f55;
+    color: #f55;
+}
+
+.clear-orders-btn:hover {
+    background: #f55;
+    color: #000;
+}
+
+.input-error {
+    border: 2px solid #f55 !important;
+}
+
+.error-message {
+    color: #f55;
+    font-size: 0.7rem;
+}
