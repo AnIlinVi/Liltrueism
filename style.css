@@ -1,7 +1,7 @@
-/* ========== GOOGLE FONTS ========== */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Source+Code Pro:wght@300;400;500;600;700&display=swap');
+/* ========== FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap');
 
-/* ========== RESET & BASE ========== */
+/* ========== RESET ========== */
 * {
     margin: 0;
     padding: 0;
@@ -9,74 +9,78 @@
 }
 
 body {
-    background: radial-gradient(circle at 20% 30%, #0a0a0f, #030308);
-    font-family: 'Source Code Pro', 'Courier New', monospace;
+    background: #fef7e6;
+    background-image: radial-gradient(#e8dcc0 1px, transparent 1px);
+    background-size: 28px 28px;
+    font-family: 'Courier Prime', 'Courier New', monospace;
     font-size: 16px;
     line-height: 1.5;
-    color: #d0d0ff;
+    color: #3e2a2a;
     position: relative;
 }
 
-/* Сетка как в киберпанке (фон) */
-body::before {
+/* добавка "плёночного зерна" */
+body::after {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 6px);
     pointer-events: none;
-    z-index: 0;
+    z-index: 2;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Orbitron', 'Courier New', monospace;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: 'Special Elite', 'Courier New', monospace;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 h1 {
     font-size: 1.8rem;
-    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-    color: #0ff;
+    color: #b1624b;
+    text-shadow: 2px 2px 0 #f0dbc0;
 }
 
 h2 {
     font-size: 1.6rem;
-    background: linear-gradient(135deg, #0ff, #f0f);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #8b5a2b;
+    border-bottom: 2px dashed #d4b88c;
+    display: inline-block;
+    padding-bottom: 0.2rem;
 }
 
 h3 {
     font-size: 1.3rem;
-    color: #f0f;
-    text-shadow: 0 0 3px #f0f;
+    color: #a45d3a;
 }
 
-/* ========== НАВИГАЦИЯ ========== */
+/* ========== НАВИГАЦИЯ (старый скотч) ========== */
 .navigation {
-    background: rgba(5, 5, 15, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid #0ff;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.05);
+    background: #fff8ed;
+    border: 1px solid #dac29c;
+    border-radius: 0px;
+    box-shadow: 8px 8px 0 rgba(100, 70, 40, 0.1);
     width: 88%;
-    margin: 1.5rem auto;
-    border-radius: 20px;
-    padding: 0.6rem 1.8rem;
+    margin: 1.8rem auto;
+    padding: 0.5rem 1.5rem;
     position: relative;
-    z-index: 10;
-    transition: all 0.2s;
+    transform: rotate(-0.5deg);
+    transition: 0.2s;
 }
 
-.navigation:hover {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+.navigation::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 60px;
+    height: 20px;
+    background: rgba(200,180,140,0.3);
+    filter: blur(2px);
+    z-index: -1;
 }
 
 .imgTitle {
@@ -88,50 +92,47 @@ h3 {
 }
 
 .litrueism {
-    font-family: 'Orbitron', monospace;
-    font-size: 1.6rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #0ff, #f0f);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
-    letter-spacing: 2px;
+    font-family: 'Special Elite', monospace;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #b96f3a;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><text x="0" y="15" fill="%23e4c8a0" font-family="monospace">/////</text></svg>');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    padding-bottom: 4px;
 }
 
 .butos {
     display: flex;
-    gap: 0.8rem;
+    gap: 0.7rem;
     flex-wrap: wrap;
 }
 
 button {
-    background: transparent;
-    border: 1px solid #0ff;
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
-    font-family: 'Orbitron', monospace;
-    font-weight: 500;
+    background: #f5e9d3;
+    border: 1px solid #c9aa7b;
+    padding: 0.4rem 1.2rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
     font-size: 0.8rem;
-    color: #0ff;
+    color: #5a3a2a;
     cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    backdrop-filter: blur(4px);
+    transition: 0.2s;
+    box-shadow: 2px 2px 0 #d6bc8c;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0 0 15px #0ff;
-    border-color: #0ff;
+    background: #e2cfaa;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #c0a06b;
 }
 
 button.active {
-    background: #f0f;
-    border-color: #f0f;
-    color: #000;
-    box-shadow: 0 0 15px #f0f;
+    background: #dbbf8c;
+    color: #2e241f;
+    border-color: #a57748;
 }
 
 a, a:visited {
@@ -139,39 +140,27 @@ a, a:visited {
     text-decoration: none;
 }
 
-/* ========== ОСНОВНЫЕ БЛОКИ ========== */
+/* ========== ОСНОВНЫЕ БЛОКИ (крафт-бумага) ========== */
 .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
     width: 88%;
-    margin: 1.8rem auto;
-    background: rgba(8, 8, 18, 0.7);
-    backdrop-filter: blur(8px);
-    border-radius: 28px;
-    border: 1px solid rgba(0, 255, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    overflow: hidden;
-    transition: all 0.2s;
-}
-
-.aboutUs:hover, .videoBiography:hover, .items:hover {
-    border-color: #f0f;
-    box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+    margin: 2rem auto;
+    background: #fffcf0;
+    border: 1px solid #e2caa0;
+    box-shadow: 6px 6px 0 rgba(80, 50, 20, 0.08);
+    padding: 0.5rem 0 1rem 0;
+    position: relative;
+    transition: 0.2s;
 }
 
 .aboutH2 {
     text-align: center;
-    padding: 1.5rem 1rem 0.5rem;
-    position: relative;
+    padding: 1rem 1rem 0.2rem;
+    display: block;
+    border-bottom: none;
 }
 
 .aboutH2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 2px;
-    background: linear-gradient(90deg, #0ff, #f0f, #0ff);
-    margin: 0.6rem auto 0;
-    border-radius: 2px;
-    box-shadow: 0 0 8px #0ff;
+    display: none;
 }
 
 .logoAbout {
@@ -179,123 +168,115 @@ a, a:visited {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem 1.5rem;
     flex-wrap: wrap;
 }
 
 .ppp {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1.5rem;
-    border-radius: 20px;
-    color: #b8b8ff;
-    border-left: 4px solid #0ff;
+    background: #faf1e0;
+    padding: 1.2rem;
+    border-left: 6px solid #cdaa77;
+    font-style: italic;
+    color: #4f3322;
     font-size: 0.9rem;
-    line-height: 1.5;
+    box-shadow: inset 0 0 0 1px #fff9ef, 0 2px 6px rgba(0,0,0,0.02);
 }
 
 .kkk {
     width: 200px;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 10px #0ff);
-    border: 1px solid #0ff;
+    filter: sepia(0.3) brightness(0.96);
+    border: 1px solid #c9aa7b;
+    padding: 4px;
+    background: #f5e6d0;
 }
 
-/* ========== ВИДЕО ========== */
 video {
     width: 400px;
-    border-radius: 20px;
-    border: 2px solid #0ff;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    border: 4px solid #ecd9b4;
+    box-shadow: 4px 4px 0 #c8ac7a;
 }
 
 /* ========== ФИЛЬТРЫ ========== */
 .butNav {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.8rem;
+    padding: 0.5rem;
     flex-wrap: wrap;
 }
 
 .filter-btn {
-    background: transparent;
-    border: 1px solid #f0f;
-    color: #f0f;
+    background: #e9dbc6;
+    border-radius: 40px;
+    font-weight: bold;
 }
 
-.filter-btn:hover {
-    background: #f0f;
-    color: #000;
-    box-shadow: 0 0 12px #f0f;
-}
-
-/* ========== ТОВАРЫ ========== */
+/* ========== ТОВАРЫ (биты) ========== */
 .theme-title {
-    padding: 1rem 1.5rem 0;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
+    padding: 0.5rem 1.5rem 0;
+    font-size: 1.3rem;
+    color: #9b5e3c;
+    background: #fdf3e2;
+    display: inline-block;
+    margin-left: 1.5rem;
+    border-left: 4px solid #d4a373;
+    padding-left: 12px;
 }
 
 .box, .theme-group {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.8rem;
     padding: 1.5rem;
     flex-wrap: wrap;
 }
 
 .beat {
-    background: rgba(10, 10, 20, 0.8);
-    border-radius: 24px;
-    padding: 1.2rem;
+    background: #fff9ef;
+    border: 1px solid #e6cfaa;
+    border-radius: 20px;
+    padding: 1rem;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    backdrop-filter: blur(4px);
     width: 220px;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0 #dcc99e;
 }
 
 .beat:hover {
-    transform: translateY(-8px);
-    border-color: #f0f;
-    box-shadow: 0 0 28px rgba(255, 0, 255, 0.3);
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 #cbb780;
 }
 
 #pic1 {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #0ff;
-    box-shadow: 0 0 8px #0ff;
-    margin-bottom: 0.8rem;
+    border: 2px solid #dbba8c;
+    background: #e8d8c0;
+    padding: 3px;
 }
 
 .beat p {
-    color: #0ff;
-    font-weight: 600;
-    font-size: 1rem;
+    margin: 0.6rem 0;
+    font-weight: 700;
+    color: #7b4a2a;
 }
 
 audio {
     width: 100%;
-    margin: 0.5rem 0;
-    filter: drop-shadow(0 0 2px #0ff);
-    background: #111;
-    border-radius: 30px;
+    filter: grayscale(0.2);
+    background: #f3ebda;
+    border-radius: 40px;
 }
 
 .beat button {
-    background: transparent;
-    border-color: #0ff;
-    color: #0ff;
-    width: 100%;
+    background: #e5cfae;
     margin-top: 0.5rem;
 }
 
 .beat button:hover {
-    background: #0ff;
-    color: #000;
+    background: #dabf96;
 }
 
 /* ========== ФОРМА ========== */
@@ -304,47 +285,35 @@ audio {
 }
 
 form {
-    background: rgba(0, 0, 0, 0.6);
+    background: #fef7ea;
     padding: 2rem;
-    border-radius: 28px;
-    width: 80%;
-    margin: 0 auto 2rem;
-    border: 1px solid #0ff;
+    width: 75%;
+    margin: 1rem auto 2rem;
+    border: 1px solid #e0c8a0;
+    box-shadow: 6px 6px 0 #e6d2b0;
 }
 
 .formInp {
     display: block;
     width: 100%;
-    padding: 0.8rem 1.2rem;
+    padding: 0.7rem 1rem;
     margin-bottom: 1rem;
-    background: #111;
-    border: 1px solid #0ff;
-    border-radius: 60px;
-    color: #0ff;
-    font-family: 'Source Code Pro', monospace;
-}
-
-.formInp::placeholder {
-    color: #5f5faf;
-}
-
-.formInp:focus {
-    outline: none;
-    border-color: #f0f;
-    box-shadow: 0 0 8px #f0f;
+    background: #fffdf7;
+    border: 1px solid #dac194;
+    font-family: 'Courier Prime', monospace;
+    border-radius: 30px;
 }
 
 .btn {
-    background: linear-gradient(90deg, #0ff, #f0f);
-    color: #000;
+    background: #dabb91;
+    color: #2f241b;
     border: none;
     font-weight: bold;
 }
 
 .btn:hover {
-    background: linear-gradient(90deg, #f0f, #0ff);
-    box-shadow: 0 0 20px #0ff;
-    transform: translateY(-2px);
+    background: #caa86c;
+    transform: translateY(-1px);
 }
 
 /* ========== КОМАНДА ========== */
@@ -352,242 +321,144 @@ form {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    padding: 1.5rem;
+    gap: 1.2rem;
+    padding: 1rem 1.5rem;
 }
 
 .teamInfo {
-    background: rgba(10, 10, 20, 0.8);
+    background: #fff5e6;
     border-radius: 24px;
-    padding: 1rem;
+    padding: 0.8rem;
+    width: 135px;
+    border: 1px solid #e2c89c;
     text-align: center;
-    width: 150px;
-    border: 1px solid #f0f;
-    transition: 0.2s;
-}
-
-.teamInfo:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px #f0f;
 }
 
 .teamInfo img {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #0ff;
+    border: 2px solid #cbaa73;
+    background: #f0e2ce;
 }
 
 .teamInfo p {
-    color: #b8b8ff;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin: 0.3rem 0;
+    color: #6b4c32;
 }
 
-/* ========== ФУТЕР / КОНТАКТЫ ========== */
-.contact {
-    padding-bottom: 0.5rem;
-}
-
+/* ========== ФУТЕР (контакты) ========== */
 .boxes {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.socialNetwork {
-    text-align: center;
-    flex: 1;
+    gap: 1.5rem;
+    padding: 1.2rem 1.5rem;
 }
 
 .socialNetwork h4 {
-    color: #f0f;
-    text-shadow: 0 0 4px #f0f;
-}
-
-.socialNetwork p {
-    color: #0ff;
-}
-
-.sN {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+    color: #b07240;
 }
 
 .sN img {
-    filter: drop-shadow(0 0 4px #0ff);
+    filter: sepia(0.4);
     transition: 0.2s;
 }
 
 .sN img:hover {
-    filter: drop-shadow(0 0 12px #f0f);
-    transform: scale(1.1);
+    filter: sepia(0);
+    transform: scale(1.02);
 }
 
 /* ========== КНОПКА ВВЕРХ ========== */
 .up-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #111;
-    border: 2px solid #0ff;
+    width: 48px;
+    height: 48px;
+    background: #f0e2ce;
+    border: 1px solid #c8a773;
     position: fixed;
     right: 20px;
     bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 30px;
     transition: 0.2s;
-    z-index: 99;
-}
-
-.up-button:hover {
-    border-color: #f0f;
-    box-shadow: 0 0 15px #f0f;
-    transform: scale(1.05);
+    box-shadow: 2px 2px 0 #bb9868;
 }
 
 .up-button p {
-    color: #0ff;
-    font-size: 1.2rem;
-    font-weight: bold;
+    color: #a5582c;
+    font-size: 1.3rem;
 }
 
-/* ========== КОРЗИНА И ЗАКАЗЫ (неоновая тема) ========== */
+/* ========== КОРЗИНА / ЗАКАЗЫ ========== */
 .cart-container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    padding: 1.5rem;
 }
 
 .cart-item, .order-card {
-    background: rgba(8, 8, 18, 0.8);
+    background: #fff8ec;
+    border: 1px solid #dfc69b;
     border-radius: 24px;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     margin-bottom: 1rem;
-    border: 1px solid #0ff;
-    backdrop-filter: blur(4px);
 }
 
 .cart-item-info {
-    color: #0ff;
-    font-weight: 500;
+    color: #67452e;
+    font-weight: bold;
 }
 
 .cart-item-quantity input {
-    width: 70px;
-    padding: 0.4rem;
+    background: #fdf5e4;
+    border: 1px solid #cfb58b;
     border-radius: 40px;
-    background: #111;
-    border: 1px solid #0ff;
-    color: #0ff;
+    padding: 0.3rem;
+    width: 65px;
     text-align: center;
 }
 
 .cart-item-remove {
-    background: transparent;
-    border: 1px solid #f55;
-    color: #f55;
-}
-
-.cart-item-remove:hover {
-    background: #f55;
-    color: #000;
+    background: #eddabb;
+    border-color: #c6966a;
+    color: #9b4a2a;
 }
 
 .cart-total {
-    border: 1px solid #f0f;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem;
-    border-radius: 60px;
+    background: #f2e5d2;
+    border-radius: 40px;
+    padding: 0.8rem 1.2rem;
     text-align: right;
-    font-size: 1.3rem;
-    color: #f0f;
-    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .btn-checkout {
-    background: linear-gradient(90deg, #0ff, #0a0);
+    background: #cbac7a;
     border: none;
-    color: #000;
-    font-weight: bold;
+    color: #2f2a1f;
     width: 100%;
-}
-
-.btn-checkout:hover {
-    box-shadow: 0 0 20px #0f0;
+    font-weight: bold;
 }
 
 .empty-message {
+    background: #fcf3e2;
+    border-radius: 28px;
+    padding: 2rem;
     text-align: center;
-    padding: 3rem;
-    background: rgba(0,0,0,0.6);
-    border-radius: 32px;
-    border: 1px solid #0ff;
-}
-
-.empty-message a {
-    color: #f0f;
-    text-decoration: underline;
 }
 
 .order-header {
-    display: flex;
-    justify-content: space-between;
-    color: #f0f;
-    border-bottom: 1px solid #0ff;
-    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #cfb282;
 }
 
-.order-item {
-    display: flex;
-    justify-content: space-between;
-    color: #0ff;
-}
-
-.order-total {
-    text-align: right;
-    font-weight: bold;
-    color: #f0f;
-    border-top: 1px solid #0ff;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-}
-
-.orders-header-actions {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.back-shop-link {
-    border: 1px solid #0ff;
-    padding: 0.4rem 1rem;
-    border-radius: 40px;
-    color: #0ff;
-}
-
-.clear-orders-btn {
-    border-color: #f55;
-    color: #f55;
-}
-
-.clear-orders-btn:hover {
-    background: #f55;
-    color: #000;
-}
-
+/* misc */
 .input-error {
-    border: 2px solid #f55 !important;
+    border: 2px solid #c35a3d !important;
 }
-
 .error-message {
-    color: #f55;
+    color: #bc5a38;
     font-size: 0.7rem;
 }
