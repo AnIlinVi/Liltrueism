@@ -1,14 +1,10 @@
-/* ========== АДАПТАЦИЯ Lo‑Fi стиль ========== */
-@media screen and (max-width: 1000px) {
+/* ========== ПРОСТОЙ АДАПТИВ ========== */
+@media screen and (max-width: 1024px) {
     .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
-        width: 92%;
-    }
-    video {
-        width: 100%;
-        max-width: 360px;
+        width: 94%;
     }
     .beat {
-        width: 200px;
+        width: 210px;
     }
 }
 
@@ -24,31 +20,29 @@
         flex-direction: column;
         text-align: center;
     }
+    .ppp {
+        width: 100%;
+    }
     .kkk {
         width: 160px;
     }
-    .ppp {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .theme-title {
-        margin-left: 0;
-        text-align: center;
-        display: block;
+    video {
+        max-width: 100%;
     }
     .box, .theme-group {
         gap: 1rem;
     }
     .beat {
-        width: 170px;
+        width: 180px;
     }
     #pic1 {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
     }
     .box1 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
     .teamInfo {
         width: 100%;
@@ -56,85 +50,87 @@
     .boxes {
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
     form {
         width: 90%;
     }
-    .cart-item {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
 }
 
 @media screen and (max-width: 600px) {
-    .beat {
-        width: 90%;
-        max-width: 260px;
-    }
     .box, .theme-group {
         flex-direction: column;
         align-items: center;
+    }
+    .beat {
+        width: 100%;
+        max-width: 280px;
+    }
+    #pic1 {
+        width: 120px;
+        height: 120px;
     }
     .box1 {
         grid-template-columns: 1fr;
     }
     h1 {
-        font-size: 1.3rem;
-    }
-    .litrueism {
         font-size: 1.4rem;
     }
+    .litrueism {
+        font-size: 1.3rem;
+    }
     .butNav {
-        gap: 0.4rem;
+        gap: 0.5rem;
     }
     .filter-btn {
-        padding: 0.2rem 0.9rem;
-        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
     }
-    .cart-total {
+    .cart-item {
+        flex-direction: column;
         text-align: center;
+        gap: 0.6rem;
     }
     .orders-header-actions {
         flex-direction: column;
-        gap: 12px;
+        align-items: stretch;
     }
 }
 
 @media screen and (max-width: 480px) {
     .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
         width: 96%;
-    }
-    .theme-title {
-        font-size: 1rem;
+        margin: 1rem auto;
     }
     .ppp {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        padding: 1rem;
+    }
+    .theme-title {
+        font-size: 1.1rem;
+        text-align: center;
     }
     .beat {
-        padding: 0.7rem;
-    }
-    #pic1 {
-        width: 85px;
-        height: 85px;
-    }
-    audio {
-        width: 100%;
+        padding: 1rem;
     }
     .teamInfo img {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
+    }
+    .cart-container {
+        padding: 1rem;
+    }
+    .cart-total {
+        font-size: 1.1rem;
+        text-align: center;
     }
     .up-button {
-        width: 38px;
-        height: 38px;
-        right: 10px;
-        bottom: 10px;
+        width: 42px;
+        height: 42px;
+        right: 16px;
+        bottom: 16px;
     }
 }
 
-/* для скрипта column-layout (малые экраны) */
 .theme-group.column-layout {
     flex-direction: column !important;
     align-items: center;
