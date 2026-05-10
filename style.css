@@ -1,137 +1,511 @@
-/* ========== ПРОСТОЙ АДАПТИВ ========== */
-@media screen and (max-width: 1024px) {
-    .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
-        width: 94%;
-    }
-    .beat {
-        width: 210px;
-    }
+/* ========== GOOGLE FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 768px) {
-    .imgTitle {
-        flex-direction: column;
-        text-align: center;
-    }
-    .butos {
-        justify-content: center;
-    }
-    .logoAbout {
-        flex-direction: column;
-        text-align: center;
-    }
-    .ppp {
-        width: 100%;
-    }
-    .kkk {
-        width: 160px;
-    }
-    video {
-        max-width: 100%;
-    }
-    .box, .theme-group {
-        gap: 1rem;
-    }
-    .beat {
-        width: 180px;
-    }
-    #pic1 {
-        width: 110px;
-        height: 110px;
-    }
-    .box1 {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    .teamInfo {
-        width: 100%;
-    }
-    .boxes {
-        flex-direction: column;
-        align-items: center;
-    }
-    form {
-        width: 90%;
-    }
+body {
+    background: #f7f9fc;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1f2937;
+    scroll-behavior: smooth;
 }
 
-@media screen and (max-width: 600px) {
-    .box, .theme-group {
-        flex-direction: column;
-        align-items: center;
-    }
-    .beat {
-        width: 100%;
-        max-width: 280px;
-    }
-    #pic1 {
-        width: 120px;
-        height: 120px;
-    }
-    .box1 {
-        grid-template-columns: 1fr;
-    }
-    h1 {
-        font-size: 1.4rem;
-    }
-    .litrueism {
-        font-size: 1.3rem;
-    }
-    .butNav {
-        gap: 0.5rem;
-    }
-    .filter-btn {
-        padding: 0.4rem 1rem;
-        font-size: 0.8rem;
-    }
-    .cart-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.6rem;
-    }
-    .orders-header-actions {
-        flex-direction: column;
-        align-items: stretch;
-    }
+h1, h2, h3, h4 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #0f172a;
 }
 
-@media screen and (max-width: 480px) {
-    .navigation, .aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
-        width: 96%;
-        margin: 1rem auto;
-    }
-    .ppp {
-        font-size: 0.85rem;
-        padding: 1rem;
-    }
-    .theme-title {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-    .beat {
-        padding: 1rem;
-    }
-    .teamInfo img {
-        width: 75px;
-        height: 75px;
-    }
-    .cart-container {
-        padding: 1rem;
-    }
-    .cart-total {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-    .up-button {
-        width: 42px;
-        height: 42px;
-        right: 16px;
-        bottom: 16px;
-    }
+h1 {
+    font-size: 1.8rem;
 }
 
-.theme-group.column-layout {
-    flex-direction: column !important;
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* ========== НАВИГАЦИЯ ========== */
+.navigation {
+    background: #ffffff;
+    border-radius: 40px;
+    width: 90%;
+    max-width: 1280px;
+    margin: 1.5rem auto;
+    padding: 0.75rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef2f6;
+    transition: all 0.2s;
+}
+
+.imgTitle {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.litrueism {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.butos {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #f1f5f9;
+}
+
+button:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+button.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+a, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ========== ОСНОВНЫЕ КАРТОЧКИ ========== */
+.aboutUs, .videoBiography, .navItems, .items, .back, .team, .contact, .container {
+    background: #ffffff;
+    border-radius: 32px;
+    width: 90%;
+    max-width: 1280px;
+    margin: 1.8rem auto;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+.aboutH2 {
+    text-align: center;
+    padding: 1.8rem 1rem 0.5rem;
+    font-size: 1.7rem;
+    color: #0f172a;
+}
+
+.logoAbout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.5rem 2rem 2rem;
+    flex-wrap: wrap;
+}
+
+.ppp {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 24px;
+    color: #334155;
+    line-height: 1.6;
+    border-left: 4px solid #3b82f6;
+    flex: 1;
+}
+
+.kkk {
+    width: 200px;
+    border-radius: 24px;
+    background: #f1f5f9;
+    padding: 0.25rem;
+}
+
+/* ========== ВИДЕО ========== */
+video {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== ФИЛЬТРЫ ========== */
+.butNav {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem 1rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: #f1f5f9;
+}
+
+.filter-btn.active-filter {
+    background: #2563eb;
+    color: white;
+}
+
+/* ========== ТОВАРЫ ========== */
+.theme-title {
+    padding: 1rem 1.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.box, .theme-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+    padding: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.beat {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 1.2rem;
+    text-align: center;
+    width: 240px;
+    transition: all 0.25s;
+    border: 1px solid #eef2ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.beat:hover {
+    transform: translateY(-5px);
+    border-color: #cbd5e1;
+    box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+}
+
+#pic1 {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+    border: 2px solid #eef2ff;
+}
+
+.beat p {
+    font-weight: 600;
+    margin: 0.6rem 0;
+    color: #0f172a;
+}
+
+audio {
+    width: 100%;
+    margin: 0.5rem 0;
+    border-radius: 40px;
+}
+
+.beat button {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    font-weight: 500;
+}
+
+.beat button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* ========== ФОРМА ========== */
+.back {
+    text-align: center;
+}
+
+form {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 32px;
+    width: 80%;
+    margin: 0.5rem auto 2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.formInp {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 60px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.formInp:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn {
+    background: #0f172a;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 0.8rem;
+    border-radius: 60px;
+    width: 100%;
+}
+
+.btn:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+}
+
+/* ========== КОМАНДА ========== */
+.box1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.teamInfo {
+    background: #f8fafc;
+    border-radius: 28px;
+    padding: 1rem;
+    text-align: center;
+    width: 150px;
+    transition: 0.2s;
+}
+
+.teamInfo:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.teamInfo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border: 2px solid #e2e8f0;
+}
+
+.teamInfo p {
+    font-size: 0.85rem;
+    margin: 0.2rem 0;
+    color: #334155;
+}
+
+/* ========== ФУТЕР ========== */
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.socialNetwork {
+    text-align: center;
+    flex: 1;
+}
+
+.socialNetwork h4 {
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.sN {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.sN img {
+    transition: transform 0.2s;
+    border-radius: 50%;
+}
+
+.sN img:hover {
+    transform: scale(1.05);
+}
+
+/* ========== КНОПКА ВВЕРХ ========== */
+.up-button {
+    width: 48px;
+    height: 48px;
+    background: #ffffff;
+    border-radius: 60px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eef2f6;
+    transition: 0.2s;
+}
+
+.up-button:hover {
+    background: #f1f5f9;
+    transform: scale(1.02);
+}
+
+.up-button p {
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* ========== КОРЗИНА И ЗАКАЗЫ ========== */
+.cart-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item, .order-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #edf2f7;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.cart-item-info {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.cart-item-quantity input {
+    width: 70px;
+    padding: 0.4rem;
+    border-radius: 40px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+}
+
+.cart-item-remove {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.cart-item-remove:hover {
+    background: #fecaca;
+}
+
+.cart-total {
+    background: #f8fafc;
+    border-radius: 40px;
+    padding: 1rem 1.5rem;
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.btn-checkout {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.btn-checkout:hover {
+    background: #1d4ed8;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 3rem;
+    background: #ffffff;
+    border-radius: 32px;
+    color: #475569;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #2563eb;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+}
+
+.order-total {
+    text-align: right;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.5rem;
+}
+
+.orders-header-actions {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.back-shop-link {
+    background: #f1f5f9;
+    padding: 0.4rem 1.2rem;
+    border-radius: 60px;
+    color: #2563eb;
+}
+
+.clear-orders-btn {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.input-error {
+    border: 2px solid #ef4444 !important;
+}
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
 }
